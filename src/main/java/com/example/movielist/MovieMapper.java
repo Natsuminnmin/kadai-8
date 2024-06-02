@@ -8,7 +8,11 @@ import java.util.List;
 
 @Mapper
 public interface MovieMapper {
+
     @Select("SELECT * FROM movies")
     List<Movie> findAll();
+
+    @Select("SELECT * FROM movies WHERE name LIKE CONCAT(#{prefix}, '%')")
+    List<Movie> findByMovieStartingWith(String prefix);
 
 }

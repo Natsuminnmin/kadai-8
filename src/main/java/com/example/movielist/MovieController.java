@@ -2,6 +2,7 @@ package com.example.movielist;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -20,8 +21,7 @@ public class MovieController {
     }
 
     @GetMapping("/movies")
-    public List<Movie> getMovies(){
-    List<Movie> movies = movieMapper.findAll();
-    return movies;
+    public List<Movie> findByMovies(@RequestParam String startsWith) {
+    return movieMapper.findByMovieStartingWith(startsWith);
     }
 }
