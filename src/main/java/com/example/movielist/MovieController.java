@@ -22,6 +22,6 @@ public class MovieController {
 
     @GetMapping("/movies")
     public List<Movie> findByMovies(@RequestParam String startsWith) {
-    return movieMapper.findByMovieStartingWith(startsWith);
+        return movieMapper.findByMovieStartingWith(startsWith);
     }
 }

@@ -2,7 +2,7 @@ package com.example.movielist;
 
 public class Movie {
 
-    private  int id;
+    private int id;
     private String name;
     private String director;
 
