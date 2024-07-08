@@ -21,10 +21,7 @@ public class MovieService {
 
     public Movie findMovie(int id) {
         Optional<Movie> movie = movieMapper.findById(id);
-        if (movie.isPresent()) {
-            return movie.get();
-        } else {
-            throw new MovieNotFoundException("There is not this id" + id + " registration.");
-        }
+        Movie Movie = movie.orElseThrow(() -> new MovieNotFoundException("There is not this id" + id + " registration."));
+        return Movie;
     }
 }
